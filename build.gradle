@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.9
+targetCompatibility = 1.9
+
+group = 'sample'
+version = '0.0.1'
+jar.archiveName = "$rootProject.name-$version-SNAPSHOT.jar"
+
+ext {
+    springBootVersion = '2.0.3.RELEASE'
+}
+
+description = "Spring Boot Reactor Flux Example"
+
+repositories {
+     maven { url "http://repo1.maven.org/maven2" }
+     maven { url "http://repo.spring.io/milestone"}
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-webflux:$rootProject.ext.springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-actuator:$rootProject.ext.springBootVersion"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$rootProject.ext.springBootVersion"
+    testCompile group: 'io.projectreactor', name: 'reactor-test', version:'3.1.8.RELEASE'
+}
