@@ -50,7 +50,7 @@ public class SampleWebFluxApplicationTests {
 
 	@Test
 	public void testActuatorHealth() {
-		this.webClient.get().uri("/application/health").accept(MediaType.APPLICATION_JSON)
+		this.webClient.get().uri("/actuator/health").accept(MediaType.APPLICATION_JSON)
 				.exchange().expectStatus().isOk().expectBody()
 				.json("{\"status\":\"UP\"}");
 	}
