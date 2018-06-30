@@ -49,8 +49,8 @@ public class SampleWebFluxApplicationTests {
 	}
 
 	@Test
-	public void testActuatorStatus() {
-		this.webClient.get().uri("/application/status").accept(MediaType.APPLICATION_JSON)
+	public void testActuatorHealth() {
+		this.webClient.get().uri("/application/health").accept(MediaType.APPLICATION_JSON)
 				.exchange().expectStatus().isOk().expectBody()
 				.json("{\"status\":\"UP\"}");
 	}
