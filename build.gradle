@@ -26,5 +26,5 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-actuator:$rootProject.ext.springBootVersion"
 
     testCompile "org.springframework.boot:spring-boot-starter-test:$rootProject.ext.springBootVersion"
-    testCompile group: 'io.projectreactor', name: 'reactor-test', version:'3.1.8.RELEASE'
+    testCompile "io.projectreactor:reactor-test:3.1.8.RELEASE"
 }

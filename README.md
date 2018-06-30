@@ -14,7 +14,10 @@ In IntelliJ-IDEA, just:
 
 ## Notes
 
+RFC: http://www.reactive-streams.org/
 
+Spring Docs: https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html
 
+Example: https://www.e4developer.com/2018/04/11/getting-reactive-with-spring-boot-2-0-and-reactor/
 
 
