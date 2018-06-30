@@ -25,11 +25,28 @@ public class FeatureController {
         return Mono.just("Features " + id);
     }
 
-    @GetMapping("/featuresList")
-    Flux<List<String>> flist() {
+    @GetMapping("/featuresAsFLuxList")
+    Flux<List<String>> featuresAsFLuxList() {
         List<String> whatever = Arrays.asList("Features 1", "Features 2", "Features 3");
         return Flux.just(whatever);
     }
+
+    @GetMapping("/operate")
+    void operate() {
+        Flux.just("red", "white", "blue")
+                .log()
+                .map(String::toUpperCase)
+                .subscribe(System.out::println);
+        // output:
+        // reactor.Flux.Array.1  : | onSubscribe([Synchronous Fuseable] FluxArray.ArraySubscription)
+        // reactor.Flux.Array.1  : | request(unbounded)
+        // reactor.Flux.Array.1  : | onNext(red)
+        // reactor.Flux.Array.1  : | onNext(white)
+        // reactor.Flux.Array.1  : | onNext(blue)
+        // reactor.Flux.Array.1  : | onComplete()
+    }
+
+
 
 
 }   
