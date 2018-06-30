@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package sample.reactor.flux;
+package sample.reactor.flux.service;
 
 import reactor.core.publisher.Mono;
 
