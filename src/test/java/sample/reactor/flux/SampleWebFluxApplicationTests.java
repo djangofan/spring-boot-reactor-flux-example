@@ -31,13 +31,14 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class SampleWebFluxApplicationTests {
 
+	@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 	@Autowired
 	private WebTestClient webClient;
 
 	@Test
 	public void testWelcome() {
 		this.webClient.get().uri("/").accept(MediaType.TEXT_PLAIN).exchange()
-				.expectBody(String.class).isEqualTo("Hello World");
+				.expectBody(String.class).isEqualTo("Application is online.");
 	}
 
 	@Test
