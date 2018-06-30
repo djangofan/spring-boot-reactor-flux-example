@@ -38,7 +38,7 @@ public class SampleWebFluxApplicationTests {
 	@Test
 	public void testWelcome() {
 		this.webClient.get().uri("/").accept(MediaType.TEXT_PLAIN).exchange()
-				.expectBody(String.class).isEqualTo("Application is online.");
+				.expectBody(String.class).isEqualTo("Reactive application is online.");
 	}
 
 	@Test

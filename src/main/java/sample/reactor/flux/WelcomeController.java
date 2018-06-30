@@ -24,7 +24,7 @@ public class WelcomeController {
 
 	@GetMapping("/")
 	public String welcome() {
-		return "Application is online.";
+		return "Reactive application is online.";
 	}
 
 }
